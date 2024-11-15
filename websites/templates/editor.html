@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monaco Editor in Flask</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs/loader.js"></script>
+</head>
+<body>
+    <div id="editor" style="width:100%;height:80vh;border:1px solid #ccc;"></div>
+    <button id="runCode">Run Code</button>
+    <pre id="output" style="border:1px solid #ccc; padding:10px; margin-top:10px;"></pre>
+
+    <script>
+        require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs' }});
+        require(["vs/editor/editor.main"], function () {
+            const editor = monaco.editor.create(document.getElementById('editor'), {
+                value:"#This is a python code editor",
+                language: "python",
+                theme: "vs-dark"
+            });
+
+            document.getElementById('runCode').addEventListener('click', async () => {
+                const code = editor.getValue(); // Get code from editor
+                const response = await fetch('/run', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ code })
+                });
+
+                const result = await response.json();
+                document.getElementById('output').textContent = result.output || result.error;
+            });
+        });
+    </script>
+</body>
+</html>
