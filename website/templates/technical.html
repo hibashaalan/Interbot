@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+<div class="technical">
+    		<div class="technical-child">
+
+    		</div>	
+	<b class="acing-technical-interviews-container">
+      			<p class="acing-technical-interviews">Acing technical interviews requires a mix of preparation, problem-solving skills, and communication. Here are key strategies to succeed:</p>
+      			<p class="acing-technical-interviews">
+        				<span class="master-the-fundamentals">Master the Fundamentals</span>
+        				<span>: Ensure a solid grasp of data structures (arrays, linked lists, stacks, queues, hash tables) and algorithms (sorting, searching, dynamic programming, recursion). Know time and space complexities (Big O Notation) for evaluating performance.</span>
+      			</p>
+      			<p class="acing-technical-interviews">
+        				<span class="master-the-fundamentals">Practice Problem Solving</span>
+        				<span>: Regularly solve coding challenges on platforms like LeetCode, HackerRank, or Codeforces. Focus on common problems related to arrays, strings, graphs, and trees.</span>
+      			</p>
+      			<p class="study-company-specific-pattern">
+        				<span class="master-the-fundamentals">Study Company-Specific Patterns</span>
+        				<span>: Research the kinds of questions commonly asked at your target companies. Practice mock interviews that simulate their style and difficulty level.</span>
+      			</p>
+    		</b>
+    		<b class="focus-on-clarity-container">
+      			<p class="acing-technical-interviews">
+        				<span class="master-the-fundamentals">Focus on Clarity and Communication</span>
+        				<span>: During the interview, talk through your thought process. Explain how you're breaking down the problem, why you're choosing a certain approach, and any trade-offs you're considering.</span>
+      			</p>
+      			<p class="acing-technical-interviews">
+        				<span class="master-the-fundamentals">Optimize Your Solutions</span>
+        				<span>: Once you've provided an initial solution, discuss ways to optimize it. Interviewers often look for your ability to improve code performance.</span>
+      			</p>
+      			<p class="acing-technical-interviews">
+        				<span class="master-the-fundamentals">Stay Calm and Think Aloud</span>
+        				<span>: If you're stuck, stay composed, think out loud, and ask clarifying questions. This shows your problem-solving approach and can provide hints from the interviewer.</span>
+      			</p>
+      			<p class="study-company-specific-pattern">
+        				<span class="master-the-fundamentals">Work on System Design (for senior roles)</span>
+        				<span>: For more experienced roles, prepare for system design interviews by studying scalable system architectures, design patterns, databases, and cloud solutions.</span>
+      			</p>
+    		</b>
+			<div class="Technical-Roles">Role:</div>
+			<select id="roleDropdown">
+				<option value="">Select a role</option>
+			</select>
+    		<img class="image-7-icon" alt="" src="{{ url_for('static', filename='image 7.png') }}">
+    		
+    		<img class="image-5-icon" alt="" src="{{ url_for('static', filename='image 5.png') }}">
+    		
+    		<img class="image-6-icon" alt="" src="{{ url_for('static', filename='image 6.png') }}">
+    	
+</div>
+
+    			
+  	</div>
+	
+{% endblock %}
