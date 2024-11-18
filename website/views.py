@@ -25,6 +25,10 @@ def bev():
 def tech():
     return render_template("technical.html")
 
+@views.route('/technical/index')
+def practice():
+    return render_template("index.html")
+
 @views.route('/company/')
 def comp():
     return render_template("company.html")
