@@ -29,6 +29,23 @@ def tech():
 def practice():
     return render_template("index.html")
 
+@views.route('/get_questions', methods=['GET'])
+def get_questions():
+    questions = []
+    # Read questions from the questions.txt file
+    try:
+        with open('questions.txt', 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    slug, title = line.split(':', 1)  # Split by colon
+                    questions.append({"titleSlug": slug.strip(), "title": title.strip()})
+    except FileNotFoundError:
+        return jsonify({"error": "Questions file not found"}), 500
+
+    # Return questions from the file
+    return jsonify(questions)
+
 @views.route('/company/')
 def comp():
     return render_template("company.html")

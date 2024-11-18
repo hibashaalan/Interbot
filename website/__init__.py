@@ -7,6 +7,8 @@ db = SQLAlchemy()
 DB_Name = "database.db"
 
 
+
+
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'AI Mock Interview Prep'
@@ -30,6 +32,7 @@ def create_app():
     @login_manager.user_loader
     def load_user(id):
         return User.query.get(int(id))
+    
     
     return app
 
