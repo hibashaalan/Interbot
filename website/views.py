@@ -2,6 +2,7 @@ from flask import Blueprint, render_template
 from flask_login import login_required, current_user
 
 views = Blueprint('views', __name__)
+#app = create_app()
 
 @views.route('/')
 @login_required
@@ -27,3 +28,9 @@ def tech():
 @views.route('/company/')
 def comp():
     return render_template("company.html")
+
+@views.route('/feedback/')
+def feedback():
+    # This route renders the feedback page, passing feedback as a context variable if needed.
+    return render_template('feedback.html')
+

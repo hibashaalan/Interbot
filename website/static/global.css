@@ -111,7 +111,7 @@ nav {
     height: 113px;
 }
 
-/*.rectangle-div {
+.rectangle-div {
     position: absolute;
     top: 569px;
     left: 622px;
@@ -122,7 +122,7 @@ nav {
     box-sizing: border-box;
     width: 181px;
     height: 54px;
-}*/
+}
 
 .get-started {
     position: absolute;
@@ -201,68 +201,120 @@ nav {
 
 /*Behavorial*/
 
-.behavorial {
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-    font-size: 27px;
-    color: #000;
-    font-family: Jura;
-    
-    padding: 2rem 1rem;
+.behavioral {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centers the content horizontally */
+    justify-content: flex-start;
+    font-family: Jura;
+    min-height: 100vh; /* Full viewport height */
+    padding: 2rem;
     gap: 2rem;
 }
 
-.intro-section{
+.intro-section {
+    text-align: center;
+    margin-bottom: 2rem; /* Space between the intro and the form */
+}
+
+.behavioral-child {
     display: flex;
-    flex-direction: row-reverse;
-    /*justify-content: center;*/
-    align-items: flex-start;
-    gap: 2rem;
-    max-width: 90%;
-    flex-wrap: wrap;
-}
-
-.behavorial-child {
-    position: relative;
-    /*top: 164px;
-    left: 44px;*/
+    flex-direction: column;
+    align-items: center; /* Center the content inside this container */
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 800px; /* Maximum width of the content */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 40px;
+    border-radius: 20px;
     background-color: #fff;
-
-    max-width: 90%;
-    margin: 2rem auto;
-    padding: 1rem;
-
-    /*width: 1350px;*/
-    height: 816px;
+    padding: 2rem;
 }
 
-.go-button{
-    position: absolute;
-    top: 400px;
-    left: 820px;
+.go-button {
     font-size: 27px;
     font-family: Jura;
-    display: inline-block;
     color: #d693f0;
     text-align: center;
     width: 200px;
-    height: 60px;   
+    height: 60px;
     background-color: transparent;
     border: 5px solid #d693f0;
     border-radius: 15px;
     transition-duration: 0.4s;
     cursor: pointer;
+    margin-bottom: auto;  /* Ensure it sticks to the bottom */
 }
 
-.go-button:hover{
+.go-button:hover {
     background: #d693f0;
     color: #ffff;
+}
+
+/* Style the form and its elements */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem; /* Adds space between form elements */
+    margin-top: 20px; /* Adds margin to the top of the form */
+}
+
+/* Label for the answer */
+form label {
+    font-size: 18px;  /* Adjust font size */
+    font-family: Jura;
+    margin-bottom: 10px;  /* Adds space below the label */
+}
+
+/* Textarea styling */
+textarea {
+    width: 100%;  /* Ensures the textarea fills the available space */
+    padding: 10px;  /* Adds padding inside the textarea */
+    font-size: 16px;  /* Adjust the font size */
+    font-family: Jura;
+    border: 2px solid #d693f0;  /* Adds a border to match the theme */
+    border-radius: 10px;  /* Rounded corners for the textarea */
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    background-color: #d693f0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Jura;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+    background-color: #a56fe3;
+}
+
+/* Form Section */
+.form-section {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.answer-container {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea {
+    width: 80%; /* Make the textarea smaller and centered */
+    max-width: 600px;
+    height: 150px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
 }
 
 .pratice {
@@ -300,11 +352,9 @@ nav {
     margin-bottom: 25px;
 }
 
-.situation-describe-the-contex {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    padding-left: 32px;
+.situation-describe-the-context {
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .using-the-star {
@@ -316,19 +366,14 @@ nav {
 }
 
 .the-star-method-container {
-    /*position: absolute;
-    top: 248px;
-    left: 110px;*/
-    font-size: 24px;
-    /*display: inline-block;*/
-    text-align: left;
+    text-align: left; /* Make sure this is left-aligned */
+    margin-bottom: 2rem;
+}
 
-    max-width: 65%;
-    /*margin: 1rem auto;*/
-    padding: 1rem;
-
-    /*width: 754px;
-    height: 671px;*/
+/* Feedback Section */
+.feedback {
+    text-align: center;
+    margin-top: 20px;
 }
 
 /*Technical*/

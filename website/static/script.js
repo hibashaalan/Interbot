@@ -1,6 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const customSelects = document.querySelectorAll(".custom-select");
+    // Get the Go button and add the click event listener
+    const goButton = document.querySelector(".go-button");
+    
+    if (goButton) {
+        goButton.addEventListener("click", function(event) {
+            event.preventDefault();  // Prevent the default action of the button (if it's a form button)
+            const form = document.querySelector("form");
+            if (form) {
+                form.submit();  // Trigger form submission
+            }
+        });
+    }
 
+    // Ensure the form itself submits properly (when "Get Feedback" is clicked)
+    const form = document.querySelector("form");
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            // Optionally, you can add more validation or logic here
+            console.log('Form is being submitted');
+        });
+    }
+
+    // Additional functionality for custom selects (not critical for feedback page)
+    const customSelects = document.querySelectorAll(".custom-select");
+    
     function updateSelectedOptions(customSelect) {
         const selectedOptions = Array.from(customSelect.querySelectorAll(".option.active")).filter(option => option !== customSelect.querySelector(".option.all-tags")).map(function(option){
             return {
@@ -142,30 +165,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     updateSelectedOptions(customSelects[0]);
-
-    const submitButton = document.querySelector(".btn_submit");
-    submitButton.addEventListener("click", function() {
-        let valid = true;
-
-        customSelects.forEach(function(customSelect) {
-            const selectedOptions = customSelect.querySelectorAll(".option.active");
-
-            if (selectedOptions.length === 0) {
-                const tagErrorMsg = customSelect.querySelector(".tag_error_msg");
-                tagErrorMsg.textContent = "This field is required";
-                tagErrorMsg.style.display = "block";
-                valid = false;
-            } else {
-                const tagErrorMsg = customSelect.querySelector(".tag_error_msg");
-                tagErrorMsg.textContent = "";
-                tagErrorMsg.style.display = "none";
-            }
-        });
-
-        if (valid) {
-            let tags = document.querySelector(".tag_input").value;
-            alert(tags);
-            resetCustomSelects();
-        }
-    });
 });

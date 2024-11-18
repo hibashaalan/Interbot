@@ -1,50 +1,63 @@
 {% extends "base.html" %}
 
-{% block title %}About{% endblock %}
+{% block title %}Behavioral Interview Feedback{% endblock %}
 
 {% block content %}
-<div class="behavorial">
-	<div class="behavorial-child">
-		<div class="behavorial-item">
-			<button class="go-button">Go</button>
-		</div>
-	<div class = "intro-section">
-	<b class="pratice">Take a mock behavioral interview</b>
-	
-	<div class="the-star-method-container">
-		<p class="the-star-method-is-a-structure">
-			<span class="the-star-method">The STAR method</span>
-			<span> is a structured approach to answering behavioral interview questions. It helps candidates clearly and
-				concisely explain past experiences by breaking down their responses into four components:</span>
-		</p>
-		<ol class="situation-describe-the-contex">
-			<li class="task-explain-your-role-in-the">
-				<span class="the-star-method">Situation</span>
-				<span>: Describe the context or background of the scenario. Set the scene by explaining the challenge or
-					task you faced.</span>
-			</li>
-			<li class="task-explain-your-role-in-the">
-				<span class="the-star-method">Task</span>
-				<span class="explain-your-role">: Explain your role in the situation and what you needed to accomplish.
-					Focus on your specific responsibilities.</span>
-			</li>
-			<li class="task-explain-your-role-in-the">
-				<span class="the-star-method">Action</span>
-				<span class="explain-your-role">: Detail the steps you took to address the situation. Highlight your
-					contributions, decisions, and actions.</span>
-			</li>
-			<li class="task-explain-your-role-in-the">
-				<span class="the-star-method">Result</span>
-				<span class="explain-your-role">: Share the outcome of your actions. Quantify your success if possible
-					and explain how it benefited the team or organization.</span>
-			</li>
-		</ol>
-		<p class="using-the-star-method-helps-st">
-			<span class="using-the-star">Using the STAR method helps structure responses, making them more compelling
-				and relevant to interviewers.</span>
-		</p>
-	</div>
-	</div>
-	</div>
+<div class="behavioral">
+    <div class="behavioral-child">
+        <div class="intro-section">
+            <bf style="text-align: center;">Take a mock behavioral interview</bf>
+			
+            <div class="the-star-method-container">
+                <p class="the-star-method-is-a-structure">
+                    <span class="the-star-method">The STAR method</span>
+                    <span> is a structured approach to answering behavioral interview questions...</span>
+                </p>
+                <ol class="situation-describe-the-contex">
+					<li class="task-explain-your-role-in-the">
+						<span class="the-star-method">Situation</span>
+						<span>: Describe the context or background of the scenario. Set the scene by explaining the challenge or
+							task you faced.</span>
+					</li>
+					<li class="task-explain-your-role-in-the">
+						<span class="the-star-method">Task</span>
+						<span class="explain-your-role">: Explain your role in the situation and what you needed to accomplish.
+							Focus on your specific responsibilities.</span>
+					</li>
+					<li class="task-explain-your-role-in-the">
+						<span class="the-star-method">Action</span>
+						<span class="explain-your-role">: Detail the steps you took to address the situation. Highlight your
+							contributions, decisions, and actions.</span>
+					</li>
+					<li class="task-explain-your-role-in-the">
+						<span class="the-star-method">Result</span>
+						<span class="explain-your-role">: Share the outcome of your actions. Quantify your success if possible
+							and explain how it benefited the team or organization.</span>
+					</li>
+				</ol>
+                <p class="using-the-star-method-helps-st">
+                    <span class="using-the-star">Using the STAR method helps structure responses. Down below, give a draft of how you would use the star method:</span>
+                </p>
+            </div>
+
+            <!-- Form to submit the user's answer -->	
+				 
+            <form action="/feedback" method="POST">
+                <!--<label for="answer">Your Answer:</label> -->
+                <textarea name="answer" id="answer" rows="5" cols="50" required>
+
+				</textarea>
+                <a href="/feedback">
+					<button class="go-button" type="button">Go</button>
+				</a>
+				<input type="submit" value="Get Feedback">
+            
+				<!--<div class="behavioral-item">-->
+				</form>
+			<!--</div>-->
+
+            <!-- Display feedback after submission -->
+        </div>
+    </div>
 </div>
 {% endblock %}

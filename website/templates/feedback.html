@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Behavioral Interview Feedback{% endblock %}
+
+{% block content %}
+<div class="behavioral">
+    <div class="behavioral-child">
+        <!-- Display the submitted answer -->
+        <div class="form-section">
+            <h3>Your Answer:</h3>
+            <p>{{ answer }}</p>
+            
+        </div>
+
+        <!-- Display feedback after submission -->
+        {% if feedback %}
+        <div class="feedback">
+            <h3>Feedback:</h3>
+            <p>{{ feedback }}</p>  
+        </div>
+        {% else %}
+        <div class="feedback">
+            <h3>No Feedback Generated:</h3>
+            <p>It looks like there was an issue generating feedback. Please try again.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
